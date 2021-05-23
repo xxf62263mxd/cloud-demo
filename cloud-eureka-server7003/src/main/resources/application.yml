@@ -1,0 +1,16 @@
+server:
+  port: 7003
+
+eureka:
+  instance:
+    hostname: eureka7003.com #eureka服务端的实例名称,改域名修改host实现
+  client:
+    #是否将自己注册进Eureka
+    register-with-eureka: false
+    #是否从Eureka中抓取已有注册信息
+    fetch-registry: false
+    service-url:
+      #server端地址
+      #集群模式，相互注册
+      defaultZone: http://eureka7002.com:7002/eureka/, http://eureka7001.com:7001/eureka/
+
